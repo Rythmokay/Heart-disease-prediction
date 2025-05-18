@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 import joblib
 import os
@@ -45,7 +45,7 @@ def train():
     
     # Train the model
     print("Training model...")
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    model = LogisticRegression(max_iter=1000, random_state=42)
     model.fit(X_train_scaled, y_train)
     
     # Evaluate the model
